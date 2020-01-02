@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/Plot-Calculator/static/js/main.6cab185c.chunk.js",
-    "main.js.map": "/Plot-Calculator/static/js/main.6cab185c.chunk.js.map",
-    "runtime-main.js": "/Plot-Calculator/static/js/runtime-main.be2a65b0.js",
-    "runtime-main.js.map": "/Plot-Calculator/static/js/runtime-main.be2a65b0.js.map",
-    "static/js/2.1b72e6bb.chunk.js": "/Plot-Calculator/static/js/2.1b72e6bb.chunk.js",
-    "static/js/2.1b72e6bb.chunk.js.map": "/Plot-Calculator/static/js/2.1b72e6bb.chunk.js.map",
+    "main.js": "/Plot-Calculator/static/js/main.06a3f6a2.chunk.js",
+    "main.js.map": "/Plot-Calculator/static/js/main.06a3f6a2.chunk.js.map",
+    "runtime-main.js": "/Plot-Calculator/static/js/runtime-main.16674a49.js",
+    "runtime-main.js.map": "/Plot-Calculator/static/js/runtime-main.16674a49.js.map",
+    "static/js/2.17e3ef3b.chunk.js": "/Plot-Calculator/static/js/2.17e3ef3b.chunk.js",
+    "static/js/2.17e3ef3b.chunk.js.map": "/Plot-Calculator/static/js/2.17e3ef3b.chunk.js.map",
     "index.html": "/Plot-Calculator/index.html",
-    "precache-manifest.8f39ec566d70ec3689cfacff79e288c1.js": "/Plot-Calculator/precache-manifest.8f39ec566d70ec3689cfacff79e288c1.js",
+    "precache-manifest.7c08c03b4737d1165ec667841a62b1ed.js": "/Plot-Calculator/precache-manifest.7c08c03b4737d1165ec667841a62b1ed.js",
     "service-worker.js": "/Plot-Calculator/service-worker.js",
-    "static/js/2.1b72e6bb.chunk.js.LICENSE": "/Plot-Calculator/static/js/2.1b72e6bb.chunk.js.LICENSE"
+    "static/js/2.17e3ef3b.chunk.js.LICENSE": "/Plot-Calculator/static/js/2.17e3ef3b.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.be2a65b0.js",
-    "static/js/2.1b72e6bb.chunk.js",
-    "static/js/main.6cab185c.chunk.js"
+    "static/js/runtime-main.16674a49.js",
+    "static/js/2.17e3ef3b.chunk.js",
+    "static/js/main.06a3f6a2.chunk.js"
   ]
 }
