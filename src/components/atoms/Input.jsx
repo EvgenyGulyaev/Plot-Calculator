@@ -6,7 +6,7 @@ import TextField from '@material-ui/core/TextField';
 const Input = (props) => <StyledInput {...props} label="Formula" variant="outlined" />;
 
 const StyledInput = styled(TextField)`
-  flex: 1 1 100%;
+  flex: 1 1 auto;
   height: 38px;
   font-size: 16px;
   line-height: 1.38;

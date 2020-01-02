@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../atoms/Input';
 import Switch from '../atoms/Switch';
 import styled from 'styled-components';
+import RangeSlider from '../atoms/RangeSlider';
 
 const Controls = ({
   formula,
@@ -10,10 +11,16 @@ const Controls = ({
   type,
   onChangeType,
   offHeaderValue,
-  onHeaderValue
+  onHeaderValue,
+  onChangeRange,
+  rangeValue
 }) =>
   <StyledControls>
     <Input value={formula} onChange={onChangeFormula} />
+    <RangeSlider
+      onChange={onChangeRange}
+      value={rangeValue}
+    />
     <CustomSwitch
       value={type}
       offHeaderValue={offHeaderValue}
@@ -23,6 +30,7 @@ const Controls = ({
   </StyledControls>;
 
 const StyledControls = styled.div`
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   height: 57px;
@@ -41,6 +49,8 @@ Controls.propTypes = {
   type: PropTypes.bool,
   onChangeFormula: PropTypes.func,
   onChangeType: PropTypes.func,
+  onChangeRange: PropTypes.func,
+  rangeValue: PropTypes.array,
 };
 
 Controls.defaultProps = {
@@ -50,6 +60,8 @@ Controls.defaultProps = {
   type: false,
   onChangeFormula: () => null,
   onChangeType: () => null,
+  onChangeRange: () => null,
+  rangeValue: [],
 };
 
 export default Controls;
