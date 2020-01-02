@@ -1,20 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Input from '../atoms/Input';
+import Controls from '../molecules/Controls';
 
 class MainPage extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    formula: '',
+    type: true,
+  };
 
-    this.state = {};
+  onChangeFormula = (event) => this.setState({formula : event.target.value});
 
-  }
+  onChangeType = (event) => this.setState({type : event.target.checked});
 
   render() {
+    const { formula, type } = this.state;
     return (
       <div>
-        <Input/>
-        
+        <Controls
+          formula={formula}
+          type={type}
+          onChangeFormula={this.onChangeFormula}
+          onChangeType={this.onChangeType}
+        />
       </div>
     );
   }
