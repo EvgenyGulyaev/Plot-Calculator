@@ -166,4 +166,4 @@ class OPZ {
   }
 }
 
-module.exports = new OPZ();
+export default new OPZ();

@@ -2,10 +2,10 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Stage, Layer, Line, Circle } from 'react-konva';
 import OPZ from '../../utils/OPZ';
+import { createArrayFromRange } from '../../utils';
 
 class Graph extends Component {
-
-  calculateGraph = ([start, end] = [], formula) => {
+  calculateGraphCustom = ([start, end] = [], formula) => {
     if (!formula) return;
     OPZ.setInitialValue();
 
@@ -15,10 +15,9 @@ class Graph extends Component {
       return OPZ.getOpzValue(opzFormula);
     }
 
-    const length = Math.abs(end - start) + 1;
-    const vars = Array.from({ length }, (v, k) => k + Math.min(end, start));
+    const vars = createArrayFromRange([start, end]);
     const linePoints = vars.map((x) => {
-      const y = OPZ.getOpzValue([...opzFormula], {x}) || 0;
+      const y = OPZ.getOpzValue([...opzFormula], { x }) || 0;
       return [y, x];
     });
     const flatPoints = linePoints.flat();
@@ -32,12 +31,14 @@ class Graph extends Component {
       range,
       width,
       height,
-      formula
+      formula,
+      wfPoints,
+      type
     } = this.props;
     const halfWidth = width / 2;
     const halfHeight = height / 2;
 
-    const data = this.calculateGraph(range, formula) || [];
+    const data = this.calculateGraphCustom(range, formula) || [];
 
     return (
       <Stage width={width} height={height}>
@@ -65,7 +66,14 @@ class Graph extends Component {
 
           }
           {
-            data.length ? <Line
+            wfPoints.length && type === false ? <Line
+              points={wfPoints}
+              tension={0.5}
+              stroke="black"
+            /> : null
+          }
+          {
+            data.length && type === true ? <Line
               points={data}
               tension={0.5}
               stroke="black"
@@ -85,6 +93,8 @@ Graph.propTypes = {
   axis: PropTypes.bool,
   range: PropTypes.array,
   formula: PropTypes.string,
+  wfPoints: PropTypes.array,
+  type: PropTypes.bool,
 };
 
 Graph.defaultProps = {
@@ -94,6 +104,8 @@ Graph.defaultProps = {
   axis: true,
   range: [],
   formula: '',
+  wfPoints: [],
+  type: true,
 };
 
 export default Graph;
