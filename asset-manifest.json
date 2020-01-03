@@ -4,16 +4,16 @@
     "main.js.map": "/plot/static/js/main.f1e2e48a.chunk.js.map",
     "runtime-main.js": "/plot/static/js/runtime-main.eb3c2166.js",
     "runtime-main.js.map": "/plot/static/js/runtime-main.eb3c2166.js.map",
-    "static/js/2.96e15e99.chunk.js": "/plot/static/js/2.96e15e99.chunk.js",
-    "static/js/2.96e15e99.chunk.js.map": "/plot/static/js/2.96e15e99.chunk.js.map",
+    "static/js/2.407ef067.chunk.js": "/plot/static/js/2.407ef067.chunk.js",
+    "static/js/2.407ef067.chunk.js.map": "/plot/static/js/2.407ef067.chunk.js.map",
     "index.html": "/plot/index.html",
-    "precache-manifest.43cbdd69193214bd27f8a23815713777.js": "/plot/precache-manifest.43cbdd69193214bd27f8a23815713777.js",
+    "precache-manifest.3cb138e82de96c25758a6b32e895a227.js": "/plot/precache-manifest.3cb138e82de96c25758a6b32e895a227.js",
     "service-worker.js": "/plot/service-worker.js",
-    "static/js/2.96e15e99.chunk.js.LICENSE": "/plot/static/js/2.96e15e99.chunk.js.LICENSE"
+    "static/js/2.407ef067.chunk.js.LICENSE": "/plot/static/js/2.407ef067.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3c2166.js",
-    "static/js/2.96e15e99.chunk.js",
+    "static/js/2.407ef067.chunk.js",
     "static/js/main.f1e2e48a.chunk.js"
   ]
 }
