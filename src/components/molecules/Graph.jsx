@@ -1,18 +1,42 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Stage, Layer, Line, Circle } from 'react-konva';
+import OPZ from 'opz-parser';
 
 class Graph extends Component {
+
+  calculateGraph = ([start, end] = [], formula) => {
+    if (!formula) return;
+    OPZ.setInitialValue();
+
+    const opzFormula = OPZ.getOPZformat(formula);
+    if (!opzFormula.includes('x')) {
+      return OPZ.getOpzValue(opzFormula);
+    }
+
+    const length = Math.abs(end - start) + 1;
+    const vars = Array.from({ length }, (v, k) => k + Math.min(end, start));
+    const linePoints = vars.map((x) => {
+      const y = OPZ.getOpzValue([...opzFormula], {x});
+      return [y, x];
+    });
+    const flatPoints = linePoints.flat();
+    if (flatPoints.includes(NaN)) return false;
+    return flatPoints
+  };
+
   render() {
     const {
       axis,
-      points,
+      range,
       width,
       height,
-      range
+      formula
     } = this.props;
     const halfWidth = width / 2;
     const halfHeight = height / 2;
+
+    const data = this.calculateGraph(range, formula) || [];
 
     return (
       <Stage width={width} height={height}>
@@ -22,28 +46,31 @@ class Graph extends Component {
             <Fragment>
               <Line
                 points={[-halfWidth, 0, halfWidth, 0]}
-                stroke='black'
+                stroke="black"
                 strokeWidth={2}
               />
               <Line
                 points={[0, halfHeight, 0, -halfHeight]}
-                stroke='black'
+                stroke="black"
                 strokeWidth={2}
               />
               <Circle
                 radius={10}
-                stroke='black'
+                stroke="black"
                 strokeWidth={1}
-                fill='black'
+                fill="black"
               />
             </Fragment>
 
           }
-          <Line
-            points={[0, 0, 100, 0, 100, 100]}
-            tension={0.5}
-            stroke="black"
-          />
+          {
+            data.length ? <Line
+              points={data}
+              tension={0.5}
+              stroke="black"
+            /> : null
+          }
+
         </Layer>
       </Stage>
     );

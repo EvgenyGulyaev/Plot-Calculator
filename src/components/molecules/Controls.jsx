@@ -13,7 +13,7 @@ const Controls = ({
   offHeaderValue,
   onHeaderValue,
   onChangeRange,
-  rangeValue
+  rangeValue,
 }) =>
   <StyledControls>
     <Input value={formula} onChange={onChangeFormula} />

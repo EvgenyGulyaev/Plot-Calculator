@@ -32,11 +32,15 @@ const Content = styled.div`
 RangeSlider.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.array,
+  min: PropTypes.number,
+  max: PropTypes.number,
 };
 
 RangeSlider.defaultProps = {
   onChange: () => null,
   value: [],
+  min: -100,
+  max: 100,
 };
 
 export default RangeSlider;
