@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Stage, Layer, Line, Circle } from 'react-konva';
-import OPZ from 'opz-parser';
+import OPZ from '../../utils/OPZ';
 
 class Graph extends Component {
 
@@ -10,6 +10,7 @@ class Graph extends Component {
     OPZ.setInitialValue();
 
     const opzFormula = OPZ.getOPZformat(formula);
+
     if (!opzFormula.includes('x')) {
       return OPZ.getOpzValue(opzFormula);
     }
@@ -17,7 +18,7 @@ class Graph extends Component {
     const length = Math.abs(end - start) + 1;
     const vars = Array.from({ length }, (v, k) => k + Math.min(end, start));
     const linePoints = vars.map((x) => {
-      const y = OPZ.getOpzValue([...opzFormula], {x});
+      const y = OPZ.getOpzValue([...opzFormula], {x}) || 0;
       return [y, x];
     });
     const flatPoints = linePoints.flat();
