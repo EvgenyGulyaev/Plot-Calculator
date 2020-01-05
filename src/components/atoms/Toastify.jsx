@@ -2,6 +2,19 @@ import styled from 'styled-components';
 import { ToastContainer } from 'react-toastify';
 
 export default styled(ToastContainer)`
+  @keyframes Toastify__trackProgress {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
+  .Toastify__progress-bar {
+    animation: Toastify__trackProgress linear 1;
+  }
+  
   .Toastify__toast {
     border-radius: 4px;
     padding: 10px 20px;

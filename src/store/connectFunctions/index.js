@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hideToast } from '../actions/toast';
+import { hideToast, showToast } from '../actions/toast';
 import { toggleSpinner } from '../actions/spinner';
 
 
@@ -8,7 +8,7 @@ export const withToast = connect(
     message: state.toast.message,
     visible: state.toast.visible,
   }),
-  { hideToast },
+  { hideToast, showToast },
 );
 
 export const withSpinner = connect(null, { toggleSpinner });

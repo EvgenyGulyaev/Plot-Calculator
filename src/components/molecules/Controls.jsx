@@ -14,9 +14,15 @@ const Controls = ({
   onHeaderValue,
   onChangeRange,
   rangeValue,
+  onBlur
 }) =>
   <StyledControls>
-    <Input value={formula} onChange={onChangeFormula} />
+    <Input
+      value={formula}
+      onChange={onChangeFormula}
+      onBlur={onBlur}
+      autoFocus
+    />
     <RangeSlider
       onChange={onChangeRange}
       value={rangeValue}
@@ -51,6 +57,7 @@ Controls.propTypes = {
   onChangeType: PropTypes.func,
   onChangeRange: PropTypes.func,
   rangeValue: PropTypes.array,
+  onBlur: PropTypes.func,
 };
 
 Controls.defaultProps = {
@@ -62,6 +69,7 @@ Controls.defaultProps = {
   onChangeType: () => null,
   onChangeRange: () => null,
   rangeValue: [],
+  onBlur : () => null,
 };
 
 export default Controls;

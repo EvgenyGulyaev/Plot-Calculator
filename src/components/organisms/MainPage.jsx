@@ -16,11 +16,17 @@ class MainPage extends React.Component {
     wfPoints: [],
   };
 
-  onChangeFormula = (event) => this.setState({ formula: event.target.value });
+  calculateGraphByWolfram = async (formula) => {
+    try {
+      return await axiosWrapper({ url: formula })
+    }
+    catch (e) {
+      toast.warn('Error, please check formula')
+    }
+  };
 
-  onChangeType = async (event) => {
-    this.setState({ type: event.target.checked });
-    if (!event.target.checked) {
+  getGraphForWolfram = async (type = this.state.type) => {
+    if(!type){
       const { formula, range } = this.state;
       const { toggleSpinner } = this.props;
 
@@ -38,19 +44,21 @@ class MainPage extends React.Component {
     }
   };
 
+  onChangeFormula = (event) => this.setState({ formula: event.target.value });
+
+  onChangeType = (event) => {
+    this.setState({ type: event.target.checked });
+    this.getGraphForWolfram(event.target.checked);
+  };
+
   onChangeRange = (event, range) => this.setState({ range });
 
-  calculateGraphByWolfram = async (formula) => {
-    try {
-      return await axiosWrapper({ url: formula })
-    }
-    catch (e) {
-      toast.warn('Error, please check formula')
-    }
-  };
+  // For save requests if  Wolfram
+  onBlur = () => this.getGraphForWolfram();
 
   render() {
     const { formula, type, range, wfPoints } = this.state;
+    toast.warn('1', {autoClose: 100});
     return (
       <div>
         <Controls
@@ -60,6 +68,7 @@ class MainPage extends React.Component {
           onChangeType={this.onChangeType}
           onChangeRange={this.onChangeRange}
           rangeValue={range}
+          onBlur={this.onBlur}
         />
         <Graph
           range={range}

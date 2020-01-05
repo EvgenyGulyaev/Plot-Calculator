@@ -9,7 +9,7 @@ class Graph extends Component {
     if (!formula) return;
     OPZ.setInitialValue();
 
-    const opzFormula = OPZ.getOPZformat(formula);
+    const opzFormula = OPZ.getOPZformat(formula.toLowerCase());
 
     if (!opzFormula.includes('x')) {
       return OPZ.getOpzValue(opzFormula);
