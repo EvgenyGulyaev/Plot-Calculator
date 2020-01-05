@@ -12,7 +12,7 @@ class MainPage extends React.Component {
   state = {
     formula: '',
     type: true,
-    range: [39, 40],
+    range: [20, 40],
     wfPoints: [],
   };
 
@@ -58,7 +58,6 @@ class MainPage extends React.Component {
 
   render() {
     const { formula, type, range, wfPoints } = this.state;
-    toast.warn('1', {autoClose: 100});
     return (
       <div>
         <Controls
