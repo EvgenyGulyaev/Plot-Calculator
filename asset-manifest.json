@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/plot/static/js/main.98eda4a5.chunk.js",
-    "main.js.map": "/plot/static/js/main.98eda4a5.chunk.js.map",
+    "main.js": "/plot/static/js/main.f37c7129.chunk.js",
+    "main.js.map": "/plot/static/js/main.f37c7129.chunk.js.map",
     "runtime-main.js": "/plot/static/js/runtime-main.eb3c2166.js",
     "runtime-main.js.map": "/plot/static/js/runtime-main.eb3c2166.js.map",
-    "static/js/2.9ad09872.chunk.js": "/plot/static/js/2.9ad09872.chunk.js",
-    "static/js/2.9ad09872.chunk.js.map": "/plot/static/js/2.9ad09872.chunk.js.map",
+    "static/js/2.7f620c04.chunk.js": "/plot/static/js/2.7f620c04.chunk.js",
+    "static/js/2.7f620c04.chunk.js.map": "/plot/static/js/2.7f620c04.chunk.js.map",
     "index.html": "/plot/index.html",
-    "precache-manifest.5ac444d47253abb9bfc3e29ce99eeebd.js": "/plot/precache-manifest.5ac444d47253abb9bfc3e29ce99eeebd.js",
+    "precache-manifest.59e53c99c8b4a0c9b5595fdaa0cd3f48.js": "/plot/precache-manifest.59e53c99c8b4a0c9b5595fdaa0cd3f48.js",
     "service-worker.js": "/plot/service-worker.js",
-    "static/js/2.9ad09872.chunk.js.LICENSE": "/plot/static/js/2.9ad09872.chunk.js.LICENSE",
+    "static/js/2.7f620c04.chunk.js.LICENSE": "/plot/static/js/2.7f620c04.chunk.js.LICENSE",
     "static/media/spinner.svg": "/plot/static/media/spinner.ebd7d019.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.eb3c2166.js",
-    "static/js/2.9ad09872.chunk.js",
-    "static/js/main.98eda4a5.chunk.js"
+    "static/js/2.7f620c04.chunk.js",
+    "static/js/main.f37c7129.chunk.js"
   ]
 }
