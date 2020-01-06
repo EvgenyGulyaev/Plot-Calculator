@@ -1,23 +1,23 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { Stage, Layer, Line, Circle } from 'react-konva';
-import OPZ from '../../utils/OPZ';
 import { createArrayFromRange } from '../../utils';
+import OPZ from 'opz-parser';
 import memoizeOne from 'memoize-one';
 
 class Graph extends Component {
   drawGrid = memoizeOne((grid = this.props.grid) => {
     if (grid) {
       const { width, height } = this.props;
-      const axisX = [...Array(2 * width).keys()].filter(el=> !(el % 5)).map(el => <Line
+      const axisX = [...Array(2 * width).keys()].filter(el=> !(el % 10)).map(el => <Line
         points={[-width + el, -height, -width + el, height]}
-        stroke="black"
+        stroke="gray"
         strokeWidth={1}
         key={`axisX-${el}`}
       />)
-      const axisY = [...Array(2 * height).keys()].filter(el=> !(el % 5)).map(el => <Line
+      const axisY = [...Array(2 * height).keys()].filter(el=> !(el % 10)).map(el => <Line
         points={[-width, -height + el, width, -height + el]}
-        stroke="black"
+        stroke="gray"
         strokeWidth={1}
         key={`axisY-${el}`}
 
@@ -31,7 +31,7 @@ class Graph extends Component {
     if (!formula) return;
     OPZ.setInitialValue();
 
-    const opzFormula = OPZ.getOPZformat(formula.toLowerCase());
+    const opzFormula = OPZ.getOPZformat(formula);
 
     if (!opzFormula.includes('x')) {
       return OPZ.getOpzValue(opzFormula);

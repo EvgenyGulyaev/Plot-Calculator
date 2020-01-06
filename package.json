@@ -12,6 +12,7 @@
     "konva": "^4.1.0",
     "lodash.get": "^4.4.2",
     "memoize-one": "^5.1.1",
+    "opz-parser": "0.0.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

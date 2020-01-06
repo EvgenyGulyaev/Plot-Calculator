@@ -4,6 +4,7 @@ import Input from '../atoms/Input';
 import Switch from '../atoms/Switch';
 import styled from 'styled-components';
 import RangeSlider from '../atoms/RangeSlider';
+import RangeSliderViaInputs from '../atoms/RangeSliderViaInputs';
 
 const Controls = ({
   formula,
@@ -23,10 +24,16 @@ const Controls = ({
       onBlur={onBlur}
       autoFocus
     />
-    <RangeSlider
-      onChange={onChangeRange}
-      value={rangeValue}
-    />
+    {
+      type ? <RangeSlider
+        onChange={onChangeRange}
+        value={rangeValue}
+      /> : <RangeSliderViaInputs
+        onChange={onChangeRange}
+        value={rangeValue}
+        onBlur={onBlur}
+      />
+    }
     <CustomSwitch
       value={type}
       offHeaderValue={offHeaderValue}

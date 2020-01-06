@@ -6,10 +6,9 @@ import {TextField, InputAdornment } from '@material-ui/core';
 
 const Input = (props) => <StyledInput
   {...props}
-  label="Formula"
   variant="outlined"
   InputProps={{
-    startAdornment: <InputAdornment position="start">Y(x) =</InputAdornment>,
+    startAdornment: <InputAdornment position="start">{props.header}</InputAdornment>,
   }}
 />;
 
@@ -23,13 +22,17 @@ const StyledInput = styled(TextField)`
 Input.propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string,
-  onChange: PropTypes.func,
+  header: PropTypes.string,
+  label: PropTypes.string,
+  onChange: PropTypes.func
 };
 
 Input.defaultProps = {
   placeholder: 'Enter...',
   value: '',
   onChange: () => null,
+  header: 'Y(x) =',
+  label: 'Formula'
 };
 
 export default Input;
